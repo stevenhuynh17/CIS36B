@@ -8,7 +8,7 @@ public class SalesApp {
 		double dummyData [][][] = {
 				{{1.0, 1.0, 1.0}, {2.0, 2.0, 2.0}, {3.0, 3.0, 3.0}}, 
 				{{4.0, 4.0, 4.0}, {5.0, 5.0, 5.0}, {6.0, 6.0, 6.0}}, 
-				{{7.0, 7.0, 7.0}, {8.0, 8.0, 8.0}, {9.0, 9.0, 9.0}}
+				{{7.0, 7.0, 7.0}, {8.0, 8.0, 8.0}, {9.0, 9.0, 10.0}}
 		};
 		
 		int option_selection = 0; 
@@ -26,6 +26,7 @@ public class SalesApp {
 				ShowMenu(user_input, dummyData);
 			} else if(option_selection == 2) {
 				EnterData(user_input, totalSales);
+				ShowMenu(user_input, totalSales);
 			} else if(option_selection == 3) {
 				System.out.printf("Goodbye.\n");
 				EndProgram();
@@ -122,9 +123,9 @@ public class SalesApp {
 		int option_selection = 0;
 		
 		while(option_selection != 4) {
-			System.out.printf("\nWhich product? "
+			System.out.printf("\nWhich Quarter? "
 					+ "\n 1) q1"
-					+ "\n 2) q1"
+					+ "\n 2) q2"
 					+ "\n 3) q3"
 					+ "\n 4) BACK TO MAIN MENU"
 					+ "\n SELECT: ");
@@ -149,7 +150,7 @@ public class SalesApp {
 		
 		for(int i=0; i < totalSales[0].length; i++) {
 			for(int j=0; j< totalSales[0][0].length; j++) {
-				total += totalSales[index - 1][i][j];
+				total += totalSales[i][index - 1][j];
 			}
 		}
 		return total;
@@ -159,7 +160,7 @@ public class SalesApp {
 		int option_selection = 0;
 		
 		while(option_selection != 4) {
-			System.out.printf("\nWhich product? "
+			System.out.printf("\nWhich Region? "
 					+ "\n 1) West"
 					+ "\n 2) North"
 					+ "\n 3) South"
@@ -168,9 +169,9 @@ public class SalesApp {
 			option_selection = user_input.nextInt();
 			
 			if(option_selection == 1) {
-				
+				System.out.printf(AddByGeography(totalSales, option_selection) + " units\n");
 			} else if(option_selection == 2) {
-				
+				System.out.printf(AddByGeography(totalSales, option_selection) + " units\n");
 			} else if(option_selection == 3) {
 				System.out.printf(AddByGeography(totalSales, option_selection) + " units\n");
 			} else if(option_selection == 4) {
