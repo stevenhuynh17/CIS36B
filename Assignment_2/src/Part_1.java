@@ -1,3 +1,9 @@
+// Steven Huynh
+// CIS 36B 34090
+// Assignment 2
+// Due 1/27/2017
+// Submitted 1/27/2017
+
 import java.util.*;
 
 public class Part_1 {
@@ -6,7 +12,11 @@ public class Part_1 {
 //		String name = user_input.nextLine(); 
 		System.out.printf("Welcome to De Anza, please register as a new student."
 				+ "\nPlease have information about your name, address, age and phone number ready. \n\n");
-				
+		createProfile(user_input);
+		testCases();
+	}
+	
+	public static void createProfile(Scanner user_input) {
 		System.out.printf("NAME: ");
 		Student name = new Student(user_input.nextLine());
 		System.out.printf("ADDRESS: ");
@@ -22,7 +32,9 @@ public class Part_1 {
 				+ "\nAGE: %s"
 				+ "\nPHONE#: %s\n\n"
 				, name.getName(), name.getAddress(), name.getAge(), name.getPhone());
-		
+	}
+	
+	public static void testCases() {
 		Student test_1 = new Student("STEVEN");
 		test_1.setAddress("TEST");
 		test_1.setAge("100");

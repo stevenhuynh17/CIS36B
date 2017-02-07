@@ -1,0 +1,13 @@
+
+public class Driver {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		FileIO a1 = new FileIO("/Users/StevenH/Desktop/Projects/cis36B/assignment336b/src/Salesdat.txt");
+		Franchise f = a1.readData();
+		
+		Store TraderJoes = new Store();
+		TraderJoes.totalsalesforweek();
+	}
+
+}

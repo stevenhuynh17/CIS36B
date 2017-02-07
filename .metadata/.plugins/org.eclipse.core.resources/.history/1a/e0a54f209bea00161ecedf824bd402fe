@@ -1,0 +1,81 @@
+import java.util.*;
+public class Store {
+	private float salesbyweek[][];
+
+	Store() {
+		salesbyweek = new float[5][7];
+	}
+
+	// getter and setters
+	
+	// setsaleforweekdayintersection(int week, int day, float sale)
+	public void setsaleforweekdayintersection(int week, int day, float sale) {
+		salesbyweek[week][day] = sale;
+	}
+
+	public void printdata() {
+		for (int i = 0; i < 5; i++)
+		{
+			for (int j = 0; j < 7; j++)
+			{
+				System.out.print(salesbyweek[i][j] + " ");
+			}
+			System.out.println("");
+		}
+	}
+	float [] getsalesforentireweek(int week) {
+		return salesbyweek[week];
+	}
+	float getsaleforweekdayintersection(int week, int day) {
+		return salesbyweek[week][day];
+	}
+	// businessmethod
+	// a. totalsalesforweek
+	// b. avgsalesforweek
+	// c. totalsalesforallweeks
+	// d. averageweeklysales
+	public void totalsalesforweek() {
+		float total_daily = 0;
+		float total_weekly = 0; 
+		ArrayList sales = new ArrayList();
+		
+		for (int i = 0; i < 5; i++)
+		{
+			for (int j = 0; j < 7; j++)
+			{
+				total_daily += salesbyweek[i][j];
+			}
+			total_weekly += total_daily;
+			sales.add(total_daily);
+			
+			System.out.printf("Tot Sales for Week %d: $%.2f \n", i+1, total_daily);
+			System.out.printf("Avg Sales for Week %d: $%.2f \n", i+1, total_daily / 7);
+			System.out.println("");
+		}
+		System.out.printf("Tot Sales for All Weeks: $%.2f\n", total_weekly);
+		System.out.printf("Avg Weekly Sales: $%.2f\n", total_weekly / 5);
+		System.out.printf("TESTING" + highest(sales));
+//		System.out.printf("Week with Highest Sales Amount: ", args);
+//		System.out.printf("Week with Lowest Sales Amount: ", args);	
+	}
+	
+	float highest(ArrayList sales) {
+		float result = (float) sales.get(0);
+		
+		for(int i = 1; i < sales.size(); i++) {
+			System.out.printf("WORKING??");
+			if(result > (float) sales.get(i)){
+				result = (float) sales.get(i);
+				System.out.print(result);
+			}
+		}
+		
+		return result; 
+	}
+	
+
+	// e. weekwithhighestsaleamt
+	// f. weekwithlowestsaleamt
+	// analyzeresults //call a through f
+	// print()
+}

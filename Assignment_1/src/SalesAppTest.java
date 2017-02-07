@@ -1,3 +1,10 @@
+//Steven Huynh
+//CIS 36B Winter 2017
+//Assignment 1
+//Due Jan 20, 2017
+//Submitted Jan 20, 2017
+
+
 import static org.junit.Assert.*;
 
 import org.junit.Test;

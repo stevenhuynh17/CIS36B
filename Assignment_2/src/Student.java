@@ -1,3 +1,8 @@
+// Steven Huynh
+// CIS 36B 34090
+// Assignment 2
+// Due 1/27/2017
+// Submitted 1/27/2017
 
 public class Student {
 	// Declare the variables used for the class

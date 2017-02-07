@@ -1,0 +1,19 @@
+//Steven Huynh
+//CIS 36B 34090
+//Assignment 3
+//Due 2/3/2017
+//Submitted 2/3/2017
+
+
+public class Driver {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		FileIO a1 = new FileIO("/Users/StevenH/Desktop/Projects/cis36B/assignment336b/src/Salesdat.txt");
+		Franchise f = a1.readData();
+		System.out.printf("\n");
+		f.getStores(0).printdata();
+		f.getStores(0).businessmethod();
+	}
+
+}
